@@ -1,8 +1,7 @@
 def loadMorningSubAndCon():
     morningList = {
-        '来自早上的撤资': '开玩笑的，这是HelloWorld',
-        '来自早上的撤资撤资': '还是开玩笑的，这是HelloWorld',
-        '来自早上的撤资撤资撤资': '依旧是开玩笑的，这是HelloWorld',
+        '记得吃早饭': '你的身体，你不关心，可是我关心。',
+        '早上好': '我正好在外面，咳，带你出去吃早餐。',
     }
     morningKeyList = list(morningList.keys())
     return morningList, morningKeyList
