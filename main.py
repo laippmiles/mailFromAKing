@@ -4,8 +4,8 @@ from getSubAndCon import getSubAndCon
 from random import uniform
 from time import sleep
 
-def mail(h):
-    subject, content = getSubAndCon(h)
+def mail(hour,h):
+    subject, content = getSubAndCon(hour,h)
     fileName = 'file0.jpg'
     filePath = r'D:\桌面\mailFromAKing\file' + '\\'
     mailFromLZY(subject, content, filePath, fileName, sendFile=False)
@@ -34,7 +34,7 @@ def main():
             sleep(20)#检测周期是十秒
             print('Now Time：',now.hour,'：',now.minute,'：',now.second)
         # 到点发信
-        mail(now.hour)
+        mail(now.hour,h)
         mailhour = now.hour
         sleep(60)
         # 等60秒，到下一分钟再开检测
