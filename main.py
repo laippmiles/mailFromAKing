@@ -18,7 +18,6 @@ def main():
     h = [8, 14, 20]
     m = int(uniform(0,59))#赋初值
     now = datetime.now()
-    mailhour = now.hour
     print('Init m：',m)
     #print(m)
     # 判断是否达到设定时间，例如0:00
@@ -27,15 +26,15 @@ def main():
             #内部死循环是为了检测时间的
             now = datetime.now()
             # 到达设定时间，结束内循环
-            if now.hour != mailhour:
+            if now.hour not in h:
                 m = int(uniform(0, 59)) #只在非发信时段更新m值
+                print('update m :',m)
             if now.hour in h and now.minute==m:
                 break
             sleep(20)#检测周期是十秒
             print('Now Time：',now.hour,'：',now.minute,'：',now.second)
         # 到点发信
         mail(now.hour,h)
-        mailhour = now.hour
         sleep(60)
         # 等60秒，到下一分钟再开检测
 main()
