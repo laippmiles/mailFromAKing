@@ -1,5 +1,8 @@
 def loadAfternoonSubAndCon():
     from random import uniform
+    subject = '如果你看到了这个标题'
+    content = '请去联系那条蠢狗'
+
     SSRlist = ['我对你好，不需要原因。',
                '没关系，我有耐心，等你慢慢开窍。',
                '我从未如此想要靠近一个人。',
@@ -20,7 +23,7 @@ def loadAfternoonSubAndCon():
              '刚才说话太严厉了吗？抱歉。',
              '下次不准再不接我电话。'
             ]
-    morningList = ['下午好。',
+    afternoonList = ['下午好。',
                    '午安，笨蛋。',
                    '午安。',
                    ]
@@ -35,7 +38,7 @@ def loadAfternoonSubAndCon():
         Rindex = int(uniform(0,len(Rlist)))
         subject = Rlist[Rindex]
 
-    contentIndex = int(uniform(0,len(morningList)))
-    content = morningList[contentIndex]
+    contentIndex = int(uniform(0,len(afternoonList)))
+    content = afternoonList[contentIndex]
 
     return subject, content

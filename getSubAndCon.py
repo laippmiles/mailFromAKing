@@ -18,6 +18,6 @@ def getSubAndCon(mailTime,h):
     else:
         return subject, content
 
-h = [8,14,23]
-hour = 23
-print(getSubAndCon(hour,h))
+'''h = [8,14,23]
+hour = 8
+print(getSubAndCon(hour,h))'''

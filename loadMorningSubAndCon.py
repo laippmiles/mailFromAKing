@@ -1,5 +1,8 @@
 def loadMorningSubAndCon():
     from random import uniform
+    subject = '如果你看到了这个标题'
+    content = '请去联系那条蠢狗'
+
     SSRlist = ['我对你好，不需要原因。',
                 '没关系，我有耐心，等你慢慢开窍。',
                 '我从未如此想要靠近一个人。',
