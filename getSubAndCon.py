@@ -4,29 +4,20 @@ from loadMorningSubAndCon import loadMorningSubAndCon
 from loadAfternoonSubAndCon import loadAfternoonSubAndCon
 from loadNightSubAndCon import loadNightSubAndCon
 def getSubAndCon(mailTime,h):
-
+    subject = '如果你看到了这个标题'
+    content = '请去联系那条蠢狗'
     if mailTime == h[0]:#第一个时段
-        morningList, morningKeyList = loadMorningSubAndCon()
-        index = int(uniform(0,len(morningKeyList)))
-        subject = morningKeyList[index]
-        content = morningList[subject]
+        subject, content = loadMorningSubAndCon()
         return subject,content
     elif mailTime == h[1]:#第二个时段
-        afternoonList, afternoonKeyList = loadAfternoonSubAndCon()
-        index = int(uniform(0, len(afternoonList)))
-        subject = afternoonKeyList[index]
-        content = afternoonList[subject]
+        subject, content = loadAfternoonSubAndCon()
         return subject, content
     elif mailTime == h[2]:#第三个时段
-        nightList, nightKeyList = loadNightSubAndCon()
-        index = int(uniform(0, len(nightList)))
-        subject = nightKeyList[index]
-        content = nightList[subject]
+        subject, content = loadNightSubAndCon()
         return subject, content
     else:
-        normalList, normalKeyList = loadNormalSubAndCon()
-        index = int(uniform(0, len(normalKeyList)))
-        subject = normalKeyList[index]
-        content = normalList[subject]
         return subject, content
-#print(getSubAndCon())
+
+h = [8,14,23]
+hour = 23
+print(getSubAndCon(hour,h))
