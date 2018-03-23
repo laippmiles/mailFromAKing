@@ -8,16 +8,19 @@ def mail(hour,h):
     subject, content = getSubAndCon(hour,h)
     fileName = 'file0.jpg'
     filePath = r'D:\桌面\mailFromAKing\file' + '\\'
-    mailFromLZY(subject, content, filePath, fileName, sendFile=False)
+    mailFromLZY(subject, content,hour,h, filePath, fileName, sendFile=False)
 
 
 def main():
-
     '''h表示设定的小时，m为设定的分钟'''
     print('Begin')
-    h = [8, 14, 20]
-    m = int(uniform(0,59))#赋初值
-    now = datetime.now()
+    h = [8, 14, 23]
+    mailTime = h.copy()
+    index = int(uniform(0, len(h)))
+    del mailTime[index]
+
+    print('Init mailtime:',mailTime)
+    m = int(uniform(1,59))#赋初值
     print('Init m：',m)
     #print(m)
     # 判断是否达到设定时间，例如0:00
@@ -25,17 +28,20 @@ def main():
         while True:
             #内部死循环是为了检测时间的
             now = datetime.now()
-            # 到达设定时间，结束内循环
-            if now.hour not in h:
-                m = int(uniform(0, 59)) #只在非发信时段更新m值
-                print('update m :',m)
-            if now.hour in h and now.minute==m:
-                break
+            if now.hour == 1 and now.minute == 13:
+                mailTime = h.copy()
+                index = int(uniform(0, len(h)))
+                del mailTime[index]
+                print('Update mailtime:',mailTime)
+            if now.hour not in  mailTime:
+                m = int(uniform(1, 59)) #只在非发信时段更新m值    
+            if now.hour in mailTime and now.minute == m:
+                break# 到达设定时间，结束内循环
             sleep(20)#检测周期是十秒
             print('Now Time：',now.hour,'：',now.minute,'：',now.second)
+            print('Update m：',m)
         # 到点发信
-        mail(now.hour,h)
+        mail(now.hour,mailTime)
         sleep(60)
         # 等60秒，到下一分钟再开检测
 main()
-

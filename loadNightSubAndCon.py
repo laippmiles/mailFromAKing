@@ -2,7 +2,6 @@ def loadNightSubAndCon():
     from random import uniform
     subject = '如果你看到了这个标题'
     content = '请去联系那条蠢狗'
-
     SSRlist = ['我对你好，不需要原因。',
                 '没关系，我有耐心，等你慢慢开窍。',
                 '我从未如此想要靠近一个人。',
@@ -24,22 +23,22 @@ def loadNightSubAndCon():
              '我可以给你带各地的纪念品。',
              '我没有意见，这次你做得很好。',
             ]
-    nightList = ['少吃点夜宵。',
-                   '晚安，笨蛋。',
-                   '晚上好，不要熬夜了',
+    nightList = ['少吃点夜宵',
+                 '晚安，笨蛋',
+                 '不要熬夜了',
                 ]
     ballot = int(uniform(0,101))
     if ballot >= 0 and ballot <= 20 :
         SSRindex = int(uniform(0,len(SSRlist)))
-        subject = SSRlist[SSRindex]
+        content = SSRlist[SSRindex]
     elif ballot >=21 and ballot <= 50:
         SRindex = int(uniform(0,len(SRlist)))
-        subject = SRlist[SRindex]
+        content = SRlist[SRindex]
     else:
         Rindex = int(uniform(0,len(Rlist)))
-        subject = Rlist[Rindex]
+        content = Rlist[Rindex]
 
-    contentIndex = int(uniform(0,len(nightList)))
-    content = nightList[contentIndex]
+    subjectIndex = int(uniform(0,len(nightList)))
+    subject = nightList[subjectIndex]
 
     return subject, content

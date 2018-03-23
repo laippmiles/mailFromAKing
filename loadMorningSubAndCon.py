@@ -2,7 +2,6 @@ def loadMorningSubAndCon():
     from random import uniform
     subject = '如果你看到了这个标题'
     content = '请去联系那条蠢狗'
-
     SSRlist = ['我对你好，不需要原因。',
                 '没关系，我有耐心，等你慢慢开窍。',
                 '我从未如此想要靠近一个人。',
@@ -23,22 +22,22 @@ def loadMorningSubAndCon():
              '我有哪次没有出手帮你。',
              '以后遇到问题，该找我就不要傻扛着。',
             ]
-    morningList = ['记得吃早饭。',
-                   '早安，笨蛋。',
+    morningList = ['记得吃早饭',
+                   '早安，笨蛋',
                    '早上好，别再赖床了',
                 ]
     ballot = int(uniform(0,101))
     if ballot >= 0 and ballot <= 20 :
         SSRindex = int(uniform(0,len(SSRlist)))
-        subject = SSRlist[SSRindex]
+        content = SSRlist[SSRindex]
     elif ballot >=21 and ballot <= 50:
         SRindex = int(uniform(0,len(SRlist)))
-        subject = SRlist[SRindex]
+        content = SRlist[SRindex]
     else:
         Rindex = int(uniform(0,len(Rlist)))
-        subject = Rlist[Rindex]
+        content = Rlist[Rindex]
 
-    contentIndex = int(uniform(0,len(morningList)))
-    content = morningList[contentIndex]
+    subjectIndex = int(uniform(0,len(morningList)))
+    subject= morningList[subjectIndex]
 
     return subject, content
