@@ -16,8 +16,8 @@ def sendEmailFromLzy(subject, content ,mailTime,h, filePath= r'D:\桌面\mailFro
     from email.mime.multipart import MIMEMultipart
     #from email import encoders
     msg = email.mime.multipart.MIMEMultipart()
-    user = 'lzy_huarui@foxmail.com'
-    pwd = 'ztcupncovep mdadc'
+    user = '发信的邮箱，这套代码目前测试只有qq和Foxmail的邮箱能用，可以改一下邮箱名称让发信邮箱更李泽言'
+    pwd = '发信邮箱的授权码，授权码获取方法自行百度'
     smtpHost = 'smtp.qq.com'
     s = smtplib.SMTP_SSL(smtpHost,465)
     s.login(user, pwd)

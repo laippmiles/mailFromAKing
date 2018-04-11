@@ -1,10 +1,7 @@
 def getTo():
     toList= [
-        '125515191@qq.com',
-        #'1293315733@qq.com',
-        'laipp123@163.com',
-        #'yixiao4112@163.com',
-        #'503221581@qq.com',
-        #'suchabigtree@gmail.com'
+        '这里填接收邮箱1',
+        '这里填接收邮箱2',
+        '这里填接收邮箱3........以此类推，目前qq，163，gmail，foxmail测试都能收到。'
     ]
     return toList
